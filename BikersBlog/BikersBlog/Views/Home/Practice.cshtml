@@ -1,0 +1,129 @@
+﻿@model BikersBlog.Models.Student
+@{
+    ViewBag.Title = "Практика 2019";
+}
+
+<h2>Practice</h2>
+
+
+
+<p>
+
+    <h3>Привет, @ViewBag.Username</h3>
+
+    ghdjjgfdj
+    <br>
+
+    @using (Html.BeginForm("Practice", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        @Html.LabelFor(model => model.Name)
+
+        @Html.EditorFor(model => model.Name)
+        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+
+
+        <br>
+        @Html.LabelFor(model => model.Age)
+
+        @Html.EditorFor(model => model.Age)
+        @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
+
+
+        <br>
+        @Html.LabelFor(model => model.Date)
+
+        @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control", type = "date" } })
+        @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+
+        <hr>
+        <br>
+        @Html.LabelFor(model => model.Group)
+
+        @Html.TextAreaFor(model => model.Group)
+        @Html.ValidationMessageFor(model => model.Group, "", new { @class = "text-danger" })
+
+
+        <br>
+        @Html.LabelFor(model => model.Expelled)
+
+        @Html.EditorFor(model => model.Expelled)
+        @Html.ValidationMessageFor(model => model.Expelled, "", new { @class = "text-danger" })
+
+        <br>
+        @Html.LabelFor(model => model.University.Name)
+
+        @Html.EditorFor(model => model.University.Name)
+
+        <br>
+        @Html.LabelFor(model => model.University.City)
+
+        @Html.EditorFor(model => model.University.City)
+
+
+
+        <input name="imageData" type="file" accept="image/x-png,image/gif,image/jpeg" />
+        @Html.ValidationMessageFor(model => model.Fotourl, "", new { @class = "text-danger" })
+
+        <br>
+        <input class="btn btn-block" type="submit" value="сохранить" />
+    }
+    <br>
+    Разделитель
+    <br>
+
+    <hr><hr>
+
+    @Html.LabelFor(model => model.Name)
+
+    @Model.Name
+
+    <br>
+    @Html.LabelFor(model => model.Age)
+
+    @Model.Age
+
+    <br>
+    @Html.LabelFor(model => model.Date)
+
+    @Model.Date.ToString("dd.mm.yyyy")
+    <hr>
+    <br>
+    @Html.LabelFor(model => model.Group)
+
+    @Model.Group
+
+    <br>
+    @Html.LabelFor(model => model.Expelled)
+
+    @Model.Expelled
+
+
+    @if (Model.University != null)
+    {
+
+        <br>
+        @Html.LabelFor(model => model.University.Name)
+
+        @Model.University.Name
+
+        <br>
+        @Html.LabelFor(model => model.University.City)
+
+        @Model.University.City
+
+        <br>
+    }
+    else
+    {
+        <h1>Университет не задан</h1>
+    }
+    @if (Model.Fotourl != null)
+    {
+        <img src="@Url.Content(Model.Fotourl)" width="100" />
+        <br>
+    }
+</p>
+
+

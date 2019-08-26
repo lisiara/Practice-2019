@@ -1,0 +1,27 @@
+﻿@model BikersBlog.Models.Driver
+@{ 
+    ViewBag.Title = "DriverView";
+}
+
+<h2>DriverView</h2>
+
+
+
+
+@using (Html.BeginForm("DriverView", "Drivers", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    @Html.LabelFor(model => model.Name)
+
+    @Model.Name
+
+    <br>
+    @Html.LabelFor(model => model.Lastname)
+
+    @Model.Lastname
+
+    <br>
+    @Html.LabelFor(model => model.Age)
+
+    @Model.Age
+}

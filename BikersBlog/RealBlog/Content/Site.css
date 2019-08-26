@@ -1,0 +1,66 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 400px;
+}
+.button-grey {
+    border-color: #aabacc;
+    color: #818283;
+    background-color:#dce4e9;
+}
+.tiny-panel
+{
+  margin:auto;
+  align-content:center;
+  width:450px;
+  margin-top:50px;
+}
+.grey-bar {
+    background-color: #c7d2d9;
+    border-color: #c7d2d9;
+}
+textarea {
+    resize: none;
+    float: right;
+    width: 300px;
+    align-self:auto;
+}
+.postimage
+{
+    width:100%;
+}
+.my-panel
+{
+    width:450px;
+    margin:auto;
+}
+.search-field
+{
+    margin-top:2px;
+    margin-left:220px
+
+}
+.wide-panel 
+{
+    width: 450px;
+    margin: auto;
+}

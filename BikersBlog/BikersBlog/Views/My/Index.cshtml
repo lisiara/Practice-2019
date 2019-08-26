@@ -1,0 +1,23 @@
+﻿@model BikersBlog.Models.Car
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<h2>Index</h2>
+
+
+@using (Html.BeginForm("Index", "My", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    @Html.LabelFor(model => model.Modelname)
+
+    @Model.Modelname
+
+    <br>
+    @Html.LabelFor(model => model.Maxspeed)
+
+    @Model.Maxspeed
+}
